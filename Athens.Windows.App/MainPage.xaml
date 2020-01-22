@@ -5,10 +5,49 @@
     xmlns:local="using:Athens.Windows.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Athens.Windows.App.UI.Controls"
+    xmlns:models="using:Athens.Windows.App.Models"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
+        <Border Grid.Row="0"
+                Background="{ThemeResource SystemChromeMediumColor}"
+                Padding="12, 44, 12, 12">
+            <AutoSuggestBox x:Name="AutoSuggestBox" QueryIcon="Find"/>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Downloads" Margin="12" FontWeight="Bold" Style="{ThemeResource TitleTextBlockStyle}"/>
+
+            <GridView Grid.Row="1" ItemsSource="{x:Bind DownloadItems}" IsItemClickEnabled="False" ItemContainerStyle="{ThemeResource NavigationViewTitleHeaderContentControlTextStyle}">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:DownloadItem">
+                        <controls:DownloadItemControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Grid>
+
+        <CommandBar x:Name="CommandBar" Grid.Row="2"
+                    DefaultLabelPosition="Right">
+            <AppBarButton x:Name="VideoButton" Icon="Video" Label="Video" Click="VideoButton_Click"/>
+            <AppBarButton x:Name="AudioButton" Icon="Audio" Label="Audio" Click="AudioButton_Click"/>
+            <AppBarToggleButton x:Name="PlaylistButton" Icon="List" Label="Playlist"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Icon="Setting" Label="Settings"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
     </Grid>
 </Page>

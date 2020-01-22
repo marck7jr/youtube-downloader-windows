@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="Athens.Windows.App.UI.Controls.DownloadItemControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Athens.Windows.App.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="242"
+    d:DesignWidth="240">
+
+    <Grid Background="{ThemeResource SystemChromeMediumLowColor}" CornerRadius="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemAltMediumLowColor}" Visibility="{x:Bind DownloadItem.IsCompleted, Mode=OneWay}" Canvas.ZIndex="1">
+            <SymbolIcon Symbol="Accept"/>
+        </Border>
+        <Image Grid.Row="0" Height="180" Source="{x:Bind DownloadItem.Video.Thumbnails.HighResUrl}" Stretch="Fill"/>
+        <StackPanel Grid.Row="1" Spacing="4" Padding="8">
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{x:Bind DownloadItem.Video.Title}" Style="{ThemeResource BaseTextBlockStyle}" TextWrapping="NoWrap"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind DownloadItem.Video.Author}" Style="{ThemeResource BodyTextBlockStyle}"/>
+        </StackPanel>
+        <ProgressBar x:Name="ProgressBar" Grid.Row="2" Maximum="100" HorizontalAlignment="Stretch" Value="{x:Bind DownloadItem.Progress, Mode=OneWay}"/>
+    </Grid>
+</UserControl>

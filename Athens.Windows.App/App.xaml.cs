@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using Athens.Windows.App.Extensions;
+using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace Athens.Windows.App
@@ -39,14 +32,19 @@ namespace Athens.Windows.App
         /// <param name="e">Detalhes sobre a solicitação e o processo de inicialização.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-
             // Não repita a inicialização do aplicativo quando a Janela já tiver conteúdo,
             // apenas verifique se a janela está ativa
-            if (rootFrame == null)
+            if (!(Window.Current.Content is Frame rootFrame))
             {
+                ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(300, 300));
+
                 // Crie um Quadro para atuar como o contexto de navegação e navegue para a primeira página
                 rootFrame = new Frame();
+                rootFrame.AddExtendedView();
+                rootFrame.ActualThemeChanged += (s, _) =>
+                {
+                    s.AddTitleBarCustomColors();
+                };
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
