@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:YTDownloader.Windows.UI.Controls"
     xmlns:models="using:YTDownloader.Windows.Models"
+    xmlns:app="using:Windows.ApplicationModel"
     mc:Ignorable="d"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
@@ -16,6 +17,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Style="{ThemeResource CaptionTextBlockStyle}" Text="{x:Bind app:Package.Current.DisplayName}" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="12"/>
 
         <Border Grid.Row="0"
                 Background="{ThemeResource SystemChromeMediumColor}"
