@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="26b9fa54-e9f8-4da9-985d-84296445f730"
+    Name="YTDownloader.Windows"
     Publisher="CN=lucim"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="26b9fa54-e9f8-4da9-985d-84296445f730" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Athens.Windows.App</DisplayName>
+    <DisplayName>YTDownloader for Windows</DisplayName>
     <PublisherDisplayName>lucim</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Athens.Windows.App.App">
+      EntryPoint="YTDownloader.Windows.App">
       <uap:VisualElements
-        DisplayName="Athens"
+        DisplayName="YTDownloader for Windows"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Athens.Windows.App"
+        Description="YTDownloader for Windows"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Athens" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png">
           <uap:ShowNameOnTiles>
@@ -45,6 +45,11 @@
           </uap:ShowNameOnTiles>
         </uap:DefaultTile >
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="landscapeFlipped"/>
+          <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>

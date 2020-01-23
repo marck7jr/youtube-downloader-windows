@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athens.Windows.App", "Athens.Windows.App\Athens.Windows.App.csproj", "{AFADD11F-392D-498D-BA4B-B458185C47CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YTDownloader.Windows", "Athens.Windows.App\YTDownloader.Windows.csproj", "{AFADD11F-392D-498D-BA4B-B458185C47CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8DD8DF92-6B1F-45BA-86D0-F6807D612B7A}"
 EndProject

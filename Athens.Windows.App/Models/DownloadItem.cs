@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using YoutubeExplode.Models;
 
-namespace Athens.Windows.App.Models
+namespace YTDownloader.Windows.Models
 {
     public enum DownloadType
     {
@@ -25,6 +25,6 @@ namespace Athens.Windows.App.Models
         public double Progress { get => (progress * 100); set => Set(ref progress, value); }
         public Video Video { get; set; }
         public DownloadType Type { get; set; }
-        public Func<Task> Func { get; set; }
+        public Task Task { get; set; }
     }
 }

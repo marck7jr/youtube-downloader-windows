@@ -1,4 +1,4 @@
-﻿using Athens.Windows.App.Extensions;
+﻿using YTDownloader.Windows.Extensions;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Athens.Windows.App
+namespace YTDownloader.Windows
 {
     /// <resumo>
     ///Fornece o comportamento específico do aplicativo para complementar a classe Application padrão.

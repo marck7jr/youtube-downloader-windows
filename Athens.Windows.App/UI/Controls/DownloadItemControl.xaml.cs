@@ -1,4 +1,4 @@
-﻿using Athens.Windows.App.Models;
+﻿using YTDownloader.Windows.Models;
 using System;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Controls;
 
 // O modelo de item de Controle de Usuário está documentado em https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace Athens.Windows.App.UI.Controls
+namespace YTDownloader.Windows.UI.Controls
 {
     public sealed partial class DownloadItemControl : UserControl
     {

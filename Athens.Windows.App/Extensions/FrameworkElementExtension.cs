@@ -3,7 +3,7 @@ using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 
-namespace Athens.Windows.App.Extensions
+namespace YTDownloader.Windows.Extensions
 {
     public static class FrameworkElementExtension
     {
