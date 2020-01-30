@@ -8,6 +8,7 @@
     xmlns:controls="using:YTDownloader.Windows.UI.Controls"
     xmlns:models="using:YTDownloader.Windows.Models"
     xmlns:app="using:Windows.ApplicationModel"
+    xmlns:ui="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource SystemControlAcrylicWindowBrush}">
 
@@ -23,7 +24,7 @@
         <Border Grid.Row="0"
                 Background="{ThemeResource SystemChromeMediumColor}"
                 Padding="12, 44, 12, 12">
-            <AutoSuggestBox x:Name="AutoSuggestBox" QueryIcon="Find"/>
+            <AutoSuggestBox x:Name="AutoSuggestBox" QueryIcon="Find" PlaceholderText="Paste here Youtube Video/Playlist URL"/>
         </Border>
 
         <Grid Grid.Row="1">
@@ -41,6 +42,13 @@
                     </DataTemplate>
                 </GridView.ItemTemplate>
             </GridView>
+            <ui:TeachingTip x:Name="PlaylistButtonTeachingTip" IsOpen="True"
+                            Target="{x:Bind PlaylistButton}"
+                            Title="Download playlists without hassle"
+                            Subtitle="It's easier than ever to queue multiple videos downloads. Just click this button and choose between download types."
+                            PreferredPlacement="TopLeft">
+
+            </ui:TeachingTip>
         </Grid>
 
         <CommandBar x:Name="CommandBar" Grid.Row="2"

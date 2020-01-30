@@ -26,6 +26,11 @@ namespace YTDownloader.Windows.Extensions
             titleBar.ButtonHoverBackgroundColor = (Color)element.Resources["SystemListLowColor"];
             titleBar.ButtonHoverForegroundColor = foregroundColor;
 
+            // Inactive
+            titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+            titleBar.ButtonInactiveForegroundColor = foregroundColor;
+
+            // Pressed
             titleBar.ButtonPressedBackgroundColor = (Color)element.Resources["SystemListMediumColor"];
             titleBar.ButtonPressedForegroundColor = foregroundColor;
         }
